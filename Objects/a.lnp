@@ -1,0 +1,6 @@
+".\Objects\START900.obj",
+".\Objects\main.obj",
+".\Objects\utilities.obj" 
+TO ".\Objects\a" 
+PRINT(".\Listings\a.m51") RAMSIZE(256) 
+CODE( 0X0000-0X1FFF )

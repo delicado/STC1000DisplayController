@@ -1,0 +1,1 @@
+"utilities.c" ROM(COMPACT) OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\utilities.lst) TABS (2) OBJECT(.\Objects\utilities.obj)

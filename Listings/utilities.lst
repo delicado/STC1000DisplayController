@@ -1,0 +1,71 @@
+C51 COMPILER V9.60.7.0   UTILITIES                                                         11/27/2023 03:05:04 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UTILITIES
+OBJECT MODULE PLACED IN .\Objects\utilities.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE utilities.c ROM(COMPACT) OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Listings\utilities.lst) TABS(2) OBJECT(.\Objects\utilities.obj)
+
+line level    source
+
+   1          #include "utilities.h"
+   2          
+   3          unsigned char HexCharToInt(char c){
+   4   1        unsigned char ret = 0;
+   5   1        if(c >= '0' && c <= '9'){
+   6   2          ret = c - '0';
+   7   2        } else if(c >= 'a' && c <= 'f'){
+   8   2          ret = (c - 'a') + 10;
+   9   2        } else if(c >= 'A' && c <= 'F'){
+  10   2          ret = (c - 'A') + 10;
+  11   2        }
+  12   1        return ret;
+  13   1      }
+  14          
+  15          unsigned char HexPairToInt(char low, char high){
+  16   1        return (HexCharToInt(high) << 4) | HexCharToInt(low);
+  17   1      }
+  18          
+  19          unsigned char DigitToLEDBits(char digit){
+  20   1        switch(digit){
+  21   2          case '0':
+  22   2            return 0x3F;
+  23   2          case '1':
+  24   2            return 0x06;
+  25   2          case '2':
+  26   2            return 0x5B;
+  27   2          case '3':
+  28   2            return 0x4F;
+  29   2          case '4':
+  30   2            return 0x66;
+  31   2          case '5':
+  32   2            return 0x6D;
+  33   2          case '6':
+  34   2            return 0x7D;
+  35   2          case '7':
+  36   2            return 0x07;
+  37   2          case '8':
+  38   2            return 0x7F;
+  39   2          case '9':
+  40   2            return 0x6F;
+  41   2          case '.':
+  42   2            return 0x80;
+  43   2        }
+  44   1      }
+*** WARNING C291 IN LINE 44 OF utilities.c: not every exit path returns a value
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    155    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.7.0   UTILITIES                                                         11/27/2023 03:05:04 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
